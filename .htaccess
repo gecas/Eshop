@@ -1,0 +1,26 @@
+﻿IndexOptions +Charset=UTF-8
+
+Options -Indexes
+
+# Turn Rewrite Engine on
+
+RewriteEngine on
+
+#Rewrite for registration.php
+
+RewriteRule ^registracija index.php?page=registration [NC,L] 
+
+#RewriteRule ^page/([0-9a-zA-Z]+) index.php?page=$1 [NC,L]
+
+#NC makes the rule  non case sensitive
+#L makes this the last rule that this specific condition will #match
+
+#Rewrite for user
+#RewriteRule ^user/([0-9a-zA-Z]+) user.php?u=$1 [NC,L]
+
+#Rewrite for article.php?id=1&title=Title-Goes-Here
+RewriteRule ^irasas/([0-9]+)?$ index.php?page=details&pro_id=$1 [NC,L]
+
+
+
+#pakeisti http conf faila
